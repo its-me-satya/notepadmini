@@ -15,7 +15,31 @@ html {
     background-color: $bgnav;
 }
 
+.orng {
+    color: #D4900B;
+    animation: blink 1s;
+    animation-iteration-count: infinite;
+}
+
+.orange {
+    background-color: $orange;
+    color: #383838;
+}
+
+@keyframes blink {
+    0% {
+        color: #D4900B;
+    }
+    50% {
+        color: #383838;
+    }
+    50% {
+        color: #383838;
+    }
+}
+
 section {
+    height: max-content;
     border-radius: 2rem;
     font-family: 'Roboto Mono', monospace;
     background-color: $bgnav;
@@ -115,4 +139,8 @@ section {
     input:focus {
         outline: none;
     }
+}
+
+a {
+    text-decoration: none;
 }
