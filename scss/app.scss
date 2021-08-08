@@ -11,16 +11,11 @@ html {
     scroll-behavior: smooth;
 }
 
-.navbar {
-    text-align: center;
-}
-
 .homenav {
-    background-color: $bgnav;
-    text-align: center;
     color: $main;
     li {
-        padding: 1rem;
+        font-size: medium;
+        margin-left: 0.4rem 0.4rem;
         display: inline-block;
     }
 }
