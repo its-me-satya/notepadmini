@@ -11,33 +11,6 @@ html {
     scroll-behavior: smooth;
 }
 
-.homenav {
-    color: $main;
-    li {
-        font-size: medium;
-        margin-left: 0.4rem 0.4rem;
-        display: inline-block;
-    }
-}
-
-.link {
-    text-decoration: none;
-    color: $main;
-}
-
-.link:hover {
-    color: $main-light;
-}
-
-.navbar-nav {
-    text-align: center;
-}
-
-nav {
-    font-family: 'Roboto Mono', monospace;
-    border-radius: 2rem 2rem 0 0;
-}
-
 .bg-nav {
     background-color: $bgnav;
 }
