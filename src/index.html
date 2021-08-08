@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notemini</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</head>
+
+<body class="body">
+    <div class="p-3">
+        <div>
+
+            <section>
+                <nav class="homenav ">
+                    <ul>
+                        <li><a class="link" href="index.html">HOME</a></li>
+                        <li><a class="link" href="">CONVERT</a></li>
+                        <li><a class="link" href="">CONTACT</a></li>
+                        <li><a class="link" href="">ABOUT</a></li>
+                    </ul>
+                </nav>
+                <h1 class="main">NOTE<i>_</i>MINI</h1>
+                <p>A simple online notepad application where user can add text and download it in txt format </p>
+                <!-- Large modal -->
+                <button type="button" class="btn btn-open" data-toggle="modal" data-target=".bd-example-modal-lg">Get Started!!</button>
+
+                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header text-bold">
+                                <img src="./images/logo.png" alt="">
+                                <h5 class="modal-title" id="exampleModalLabel">NOTE_MINI</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                            </div>
+                            <div class="modal-body">
+                                <p class="txthead">Welcome to NOTE_MINI</p><br>
+                                <textarea id="inputTextToSave" placeholder="Start typing" rows="15" class="textarea"></textarea>
+
+                            </div>
+                            <div class="modal-footer">
+                                save as:
+                                <p><input id="inputFileNameToSaveAs"></input>
+                                </p>
+                                <button onclick="saveTextAsFile()" type="button" class="btn btn-open">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="imgsec">
+                    <img src="./images/Ellipse 8.png" alt="ring-1" class="imgnote1"><br>
+                    <img src="./images/Ellipse 9.png" alt="ring-2" class="imgnote2">
+                </div>
+
+            </section>
+            <section>
+
+            </section>
+        </div>
+        <script>
+            function saveTextAsFile() {
+                var textToSave = document.getElementById("inputTextToSave").value;
+                var textToSaveAsBlob = new Blob([textToSave], {
+                    type: "text/plain"
+                });
+                var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
+                var fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value;
+
+                var downloadLink = document.createElement("a");
+                downloadLink.download = fileNameToSaveAs;
+                downloadLink.innerHTML = "Download File";
+                downloadLink.href = textToSaveAsURL;
+                downloadLink.onclick = destroyClickedElement;
+                downloadLink.style.display = "none";
+                document.body.appendChild(downloadLink);
+
+                downloadLink.click();
+            }
+
+            function destroyClickedElement(event) {
+                document.body.removeChild(event.target);
+            }
+
+            function loadFileAsText() {
+                var fileToLoad = document.getElementById("fileToLoad").files[0];
+
+                var fileReader = new FileReader();
+                fileReader.onload = function(fileLoadedEvent) {
+                    var textFromFileLoaded = fileLoadedEvent.target.result;
+                    document.getElementById("inputTextToSave").value = textFromFileLoaded;
+                };
+                fileReader.readAsText(fileToLoad, "UTF-8");
+            }
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+$bgnav:#383838;
+$main:#f7f7f7;
+$main-light:#c4c4c4;
+$orange:#D4900B;
+.body {
+    background-color: $orange;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    text-align: center;
+}
+
+.homenav {
+    background-color: $bgnav;
+    text-align: center;
+    color: $main;
+    li {
+        padding: 1rem;
+        display: inline-block;
+    }
+}
+
+.link {
+    text-decoration: none;
+    color: $main;
+}
+
+.link:hover {
+    color: $main-light;
+}
+
+.navbar-nav {
+    text-align: center;
+}
+
+nav {
+    font-family: 'Roboto Mono', monospace;
+    border-radius: 2rem 2rem 0 0;
+}
+
+.bg-nav {
+    background-color: $bgnav;
+}
+
+section {
+    border-radius: 2rem;
+    font-family: 'Roboto Mono', monospace;
+    background-color: $bgnav;
+    text-align: center;
+    h1 {
+        color: $main;
+    }
+    .btn-open {
+        background-color: $orange;
+        color: $main;
+    }
+    p {
+        color: $orange;
+        font-size: large;
+    }
+    .imgsec {
+        position: relative;
+        top: 2rem;
+        margin: 2rem;
+    }
+    .imgnote2 {
+        animation: mymove 3s;
+        animation-iteration-count: infinite;
+    }
+    .imgnote1 {
+        position: relative;
+        animation: mymove 3s;
+        animation-iteration-count: infinite;
+    }
+    @keyframes mymove {
+        0% {
+            -webkit-transform: rotateZ(0deg);
+            -ms-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+        }
+        50% {
+            -webkit-transform: rotateZ(0deg);
+            -ms-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+        }
+        50% {
+            -webkit-transform: rotateZ(30deg);
+            -ms-transform: rotateZ(30deg);
+            transform: rotateZ(30deg);
+        }
+    }
+    .imgnote2 {
+        position: relative;
+        bottom: 4rem;
+    }
+}
+
+.notehead {
+    justify-content: center;
+    height: 3rem;
+    width: 15rem;
+    background-color: $orange;
+}
+
+.close {
+    border: none;
+    border-radius: 2px;
+    font-size: larger;
+    color: $orange;
+}
+
+.center {
+    text-align: center;
+}
+
+.modal-header {
+    background-color: $orange;
+    color: $main;
+}
+
+.text-bold {
+    font-size: 700;
+}
+
+.modal-body {
+    text-align: start;
+    .txthead {
+        font-weight: 600;
+    }
+}
+
+.textarea {
+    border: none;
+    height: 50%;
+    width: 98%;
+    max-width: 98%;
+    max-height: 50%;
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+}
