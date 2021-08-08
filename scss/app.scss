@@ -127,22 +127,24 @@ section {
     font-size: 700;
 }
 
+.modal {
+    backdrop-filter: blur(10px);
+}
+
 .modal-body {
     text-align: start;
     .txthead {
         font-weight: 600;
     }
-}
-
-.textarea {
-    border: none;
-    height: 50%;
-    width: 98%;
-    max-width: 98%;
-    max-height: 50%;
-}
-
-textarea:focus,
-input:focus {
-    outline: none;
+    .textarea {
+        border: none;
+        height: 40%;
+        width: 98%;
+        max-width: 98%;
+        max-height: 50%;
+    }
+    textarea:focus,
+    input:focus {
+        outline: none;
+    }
 }
